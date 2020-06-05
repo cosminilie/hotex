@@ -1,0 +1,22 @@
+<header class="header">
+	<div class="header header-title header-title-large">
+		<a href="{{ .Site.BaseURL }}">Cosmin's Website</a></div>
+	<nav class="header-navigation ">
+		<a class="header-navigation-item" href="/"><b>Home</b></a>
+		{{ with .Site.Menus.main }}
+		{{ range . }}
+		<a class="header-navigation-item" href="{{ .URL | relURL }}"><b>{{ .Name }}</b></a>
+		{{ end }}
+	</nav>
+	{{ end }}
+	<div class="header header-title header-title-small">
+		<blockquote>
+			<p>"We do these things not because they are easy, but because we thought they were going to be easy"
+			</p>
+
+			<cite><a target="_blank" href="https://twitter.com/Pinboard">
+					@Pinboard
+				</a></cite>
+		</blockquote>
+	</div>
+</header>

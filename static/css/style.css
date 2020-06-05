@@ -1,0 +1,443 @@
+/*!
+ * Heavily inspired by:  LaTeX.css (https://latex.now.sh/)
+ **** Source: https://github.com/vincentdoerig/latex-css
+ **** Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
+*/
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/LM-regular.woff2') format('woff2'),
+    url('../fonts/LM-regular.woff') format('woff'),
+    url('../fonts/LM-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/LM-italic.woff2') format('woff2'),
+    url('../fonts/LM-italic.woff') format('woff'),
+    url('../fonts/LM-italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/LM-bold.woff2') format('woff2'),
+    url('../fonts/LM-bold.woff') format('woff'),
+    url('../fonts/LM-bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Latin Modern';
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/LM-bold-italic.woff2') format('woff2'),
+    url('../fonts/LM-bold-italic.woff') format('woff'),
+    url('../fonts/LM-bold-italic.ttf') format('truetype');
+}
+
+/* Justify and hyphenate all paragraphs */
+p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  margin-top: 1rem;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Prevent textarea from overflowing */
+textarea {
+  width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Styles for inline code or code snippets */
+code,
+pre,
+kbd {
+  font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  font-size: 85%;
+}
+pre {
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 4px;
+  background: hsl(210, 28%, 93%);
+}
+pre code {
+  font-size: 95%;
+  position: relative;
+}
+kbd {
+  background: hsl(210, 5%, 100%);
+  border: 1px solid hsl(210, 5%, 70%);
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 75%;
+}
+/* Make table 100% width, add borders between rows */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+}
+td {
+  border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+thead th {
+  border-bottom: 2px solid hsl(0, 0%, 70%);
+}
+tfoot th {
+  border-top: 2px solid hsl(0, 0%, 70%);
+}
+
+/* Heading typography */
+h1 {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  margin-bottom: 1.625rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-top: 1.8rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 2.5rem;
+}
+
+
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.625rem;
+}
+
+h1 + h2 {
+  margin-top: 1.625rem;
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  margin-top: 0.8rem;
+}
+
+h5 + h6 {
+  margin-top: -0.8rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.8rem;
+}
+
+
+/*!
+ * Own CSS
+*/
+
+wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  line-height: 1.8;
+  max-width: 80ch;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+
+  counter-reset: theorem;
+  counter-reset: definition;
+
+  color: hsl(0, 5%, 10%);
+  background-color: hsl(210, 20%, 98%);
+
+  text-rendering: optimizeLegibility;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  justify-content: space-between;
+  /* background: #ff6347; */
+}
+
+.header a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.25rem;
+
+}
+
+.header-title {
+  color: #00000079;
+}
+
+.header-title-large {
+  text-align: start;
+  /* background: #ffd3cb; */
+}
+
+.header-title-large a {
+  padding: 8px;
+  font-weight: normal;
+  font-size: 2rem;
+  /* background-color: #dddddd; */
+}
+.header-title-small {
+  flex-basis: 100%;
+  text-align: start;
+  /* background: #fef1ef; */
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.header-navigation {
+  text-align: end;
+  flex-grow: 1;
+  /* background: #97a404; */
+
+  
+}
+
+.header-navigation  a {
+  color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.header-navigation a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: rgb(237, 237, 237);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.header-navigation a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+
+.footer {
+  font-weight: normal;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  /* background: lightgreen; */
+  text-align: center;
+  margin-top: 1rem;
+
+  line-height: 1.5;
+  font-size: 85%;
+  margin-bottom: 0.4rem;
+}
+
+.footer a {
+  color: rgb(0, 0, 0);
+  /* text-transform: uppercase; */
+   text-decoration: none;
+ /* letter-spacing: 0.15em; */
+  
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.footer a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: rgb(237, 237, 237);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.footer a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.fp-github:before {
+    color:#000;
+    content: '\f09b'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+}
+
+.fp-twitter:before {
+     color:#00acee; 
+    content: '\f099'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+}
+
+.fp-linkedin:before {
+    color:#0e76a8; 
+    content: '\f08c'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+}
+
+.fp-cc-by:before {
+    color:hsl(22, 96%, 57%); 
+    content: '\f4e7'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+}
+.fp-cc:before {
+    color:#fb7729; 
+    content: '\f25e'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+}
+.fp-cc-sa:before {
+    color:#fb7729; 
+    content: '\f4ef'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+}
+
+.fp-rss:before {
+    color:#fb7729; 
+    content: '\f09e'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+     font-size:30px;
+
+
+     
+}
+
+.fp-pinboard:before {
+    color:#d0edff; 
+    content: '\f08d'; /* You should use \ and not /*/
+    font-family: "Font Awesome 5 Free"; /* This is the correct font-family*/
+    font-style: normal;
+    font-weight: normal;
+    font-size:25px;
+   transform: rotate(-90deg);
+}
+.main {
+  text-align: justify;
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  /* background: deepskyblue; */
+}
+
+.latestPosts {
+   background: gold; 
+}
+
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .latestPosts { order: 1; } 
+  .main    { order: 2; }
+  .footer  { order: 4; }
+}
+
+body {
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  line-height: 1.8;
+
+  max-width: 90ch;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+
+  counter-reset: theorem;
+  counter-reset: definition;
+
+  color: hsl(0, 5%, 10%);
+  background-color: hsl(210, 20%, 98%);
+
+  text-rendering: optimizeLegibility;
+}
+
