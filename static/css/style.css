@@ -248,12 +248,36 @@ wrapper {
   font-size: 2rem;
   /* background-color: #dddddd; */
 }
+
+
 .header-title-small {
   flex-basis: 100%;
   text-align: start;
   /* background: #fef1ef; */
-  font-size: 1rem;
+  font-size: 2.8vmin;
   font-style: italic;
+}
+
+.header-title-small a {
+  padding: 8px;
+  text-align: start;
+   font-size: 3.2vmin;
+}
+
+
+@media only screen and (max-width: 450px) {
+  .header-title-small {
+    flex-basis: 100%;
+    text-align: start;
+    /* background: #fef1ef; */
+    font-size: 2.6vw;
+    font-style: italic;
+  }
+
+  .header-title-small a {
+    text-align: start;
+    font-size: 3vw;
+  }
 }
 
 .header-navigation {
@@ -266,7 +290,7 @@ wrapper {
 
 .header-navigation  a {
   color: rgb(0, 0, 0);
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 0.01em;
@@ -292,6 +316,48 @@ wrapper {
   left: 0; 
 }
 
+
+@media only screen and (max-width: 400px) {
+  /* For mobile phones line Iphone X or larger*/
+.header-title-large a {
+  padding: 8px;
+  font-weight: normal;
+  font-size: 1.6rem;
+}
+
+.header-navigation  a {
+  color: rgb(0, 0, 0);
+    font-size: 0.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  
+  display: inline-block;
+  padding: 13px 17px;
+  position: relative;
+}
+}
+
+@media only screen and (max-width: 330px) {
+  /* For mobile phones IPhone SE and smaller */
+  .header-title-large a {
+    padding: 8px;
+    font-weight: normal;
+    font-size: 1.5rem;
+  }
+
+  .header-navigation  a {
+    color: rgb(0, 0, 0);
+      font-size: 0.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    
+    display: inline-block;
+    padding: 10px 13px;
+    position: relative;
+  }
+}
 
 .footer {
   font-weight: normal;
@@ -332,10 +398,69 @@ wrapper {
   left: 0; 
 }
 
+
+.main {
+  text-align: justify;
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  /* background: deepskyblue; */
+}
+
+.main article {
+  font-size: 3vmin;
+}
+
+@media only screen and (max-width: 450px) {
+  .main article {
+    font-size: 4.5vmin;
+  }
+  .main h1 {
+    font-size: 7vmin;
+    margin-top: 0px;
+  }
+}
+
+.latestPosts {
+   background: gold; 
+    border-radius: 10px;
+}
+
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .latestPosts { order: 1; } 
+  .main    { order: 2; }
+  .footer  { order: 4; }
+}
+
+body {
+  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
+  line-height: 1.8;
+
+  max-width: 90ch;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+
+  counter-reset: theorem;
+  counter-reset: definition;
+
+  color: hsl(0, 5%, 10%);
+  background-color: hsl(210, 20%, 98%);
+
+  text-rendering: optimizeLegibility;
+}
+
+/* Social Icons*/
+
 .fp-github:before {
     color:#000;
-    content: '\f09b'; /* You should use \ and not /*/
-    font-family: "Font Awesome 5 Brands"; /* This is the correct font-family*/
+    content: '\f09b';
+    font-family: "Font Awesome 5 Brands"; 
     font-style: normal;
     font-weight: normal;
     font-size:30px;
@@ -405,45 +530,3 @@ wrapper {
     font-size:25px;
    transform: rotate(-90deg);
 }
-.main {
-  text-align: justify;
-  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
-  /* background: deepskyblue; */
-}
-
-.latestPosts {
-   background: gold; 
-    border-radius: 10px;
-}
-
-
-@media all and (min-width: 600px) {
-  .aside { flex: 1 0 0; }
-}
-
-@media all and (min-width: 800px) {
-  .main    { flex: 3 0px; }
-  .latestPosts { order: 1; } 
-  .main    { order: 2; }
-  .footer  { order: 4; }
-}
-
-body {
-  font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
-  line-height: 1.8;
-
-  max-width: 90ch;
-  min-height: 100vh;
-  overflow-x: hidden;
-  margin: 0 auto;
-  padding: 2rem 1.25rem;
-
-  counter-reset: theorem;
-  counter-reset: definition;
-
-  color: hsl(0, 5%, 10%);
-  background-color: hsl(210, 20%, 98%);
-
-  text-rendering: optimizeLegibility;
-}
-
