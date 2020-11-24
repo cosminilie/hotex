@@ -73,6 +73,11 @@ article > * + * {
   margin-top: 1em;
 }
 
+.readmore {
+  color: #00000079;
+  font-weight: bold;
+}
+
 /* Styles for inline code or code snippets */
 code,
 pre,
@@ -121,72 +126,6 @@ tfoot th {
   border-top: 2px solid hsl(0, 0%, 70%);
 }
 
-/* Heading typography */
-h1 {
-  font-size: 2.5rem;
-  line-height: 3.25rem;
-  margin-bottom: 1.625rem;
-}
-
-h2 {
-  font-size: 1.7rem;
-  line-height: 2rem;
-  margin-top: 3rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-top: 2.5rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-  margin-top: 2rem;
-}
-
-h5 {
-  font-size: 1rem;
-  margin-top: 1.8rem;
-}
-
-h6 {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: normal;
-  margin-top: 2.5rem;
-}
-
-
-h3,
-h4,
-h5,
-h6 {
-  line-height: 1.625rem;
-}
-
-h1 + h2 {
-  margin-top: 1.625rem;
-}
-
-h2 + h3,
-h3 + h4,
-h4 + h5 {
-  margin-top: 0.8rem;
-}
-
-h5 + h6 {
-  margin-top: -0.8rem;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.8rem;
-}
-
-
 /*!
  * Own CSS
 */
@@ -198,8 +137,6 @@ wrapper {
   text-align: center;
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
-  max-width: 80ch;
-  min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 2rem 1.25rem;
@@ -207,8 +144,8 @@ wrapper {
   counter-reset: theorem;
   counter-reset: definition;
 
-  color: hsl(0, 5%, 10%);
-  background-color: hsl(210, 20%, 98%);
+
+  
 
   text-rendering: optimizeLegibility;
 }
@@ -223,7 +160,7 @@ wrapper {
   flex-flow: row wrap;
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   justify-content: space-between;
-  /* background: #ff6347; */
+   /* background: #ff6347; */
 }
 
 .header a {
@@ -239,51 +176,32 @@ wrapper {
 
 .header-title-large {
   text-align: start;
-  /* background: #ffd3cb; */
 }
 
 .header-title-large a {
   padding: 8px;
   font-weight: normal;
   font-size: 2rem;
-  /* background-color: #dddddd; */
 }
 
 
 .header-title-small {
   flex-basis: 100%;
   text-align: start;
-  /* background: #fef1ef; */
-  font-size: 2.8vmin;
   font-style: italic;
 }
 
 .header-title-small a {
   padding: 8px;
   text-align: start;
-   font-size: 3.2vmin;
+  
 }
 
-
-@media only screen and (max-width: 450px) {
-  .header-title-small {
-    flex-basis: 100%;
-    text-align: start;
-    /* background: #fef1ef; */
-    font-size: 2.6vw;
-    font-style: italic;
-  }
-
-  .header-title-small a {
-    text-align: start;
-    font-size: 3vw;
-  }
-}
 
 .header-navigation {
   text-align: end;
   flex-grow: 1;
-  /* background: #97a404; */
+   /* background: #97a404; */
 
   
 }
@@ -314,49 +232,6 @@ wrapper {
 .header-navigation a:hover:after { 
   width: 100%; 
   left: 0; 
-}
-
-
-@media only screen and (max-width: 400px) {
-  /* For mobile phones line Iphone X or larger*/
-.header-title-large a {
-  padding: 8px;
-  font-weight: normal;
-  font-size: 1.6rem;
-}
-
-.header-navigation  a {
-  color: rgb(0, 0, 0);
-    font-size: 0.6rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  
-  display: inline-block;
-  padding: 13px 17px;
-  position: relative;
-}
-}
-
-@media only screen and (max-width: 330px) {
-  /* For mobile phones IPhone SE and smaller */
-  .header-title-large a {
-    padding: 8px;
-    font-weight: normal;
-    font-size: 1.5rem;
-  }
-
-  .header-navigation  a {
-    color: rgb(0, 0, 0);
-      font-size: 0.5rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.01em;
-    
-    display: inline-block;
-    padding: 10px 13px;
-    position: relative;
-  }
 }
 
 .footer {
@@ -402,46 +277,25 @@ wrapper {
 .main {
   text-align: justify;
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
-  /* background: deepskyblue; */
+   /* background: deepskyblue; */
 }
 
-.main article {
-  font-size: 3vmin;
+.main a:hover,a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: black;
 }
 
-@media only screen and (max-width: 450px) {
-  .main article {
-    font-size: 4.5vmin;
-  }
-  .main h1 {
-    font-size: 7vmin;
-    margin-top: 0px;
-  }
-}
 
 .latestPosts {
    background: gold; 
     border-radius: 10px;
 }
-
-
-@media all and (min-width: 600px) {
-  .aside { flex: 1 0 0; }
-}
-
-@media all and (min-width: 800px) {
-  .main    { flex: 3 0px; }
-  .latestPosts { order: 1; } 
-  .main    { order: 2; }
-  .footer  { order: 4; }
-}
+s
 
 body {
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
-
-  max-width: 90ch;
-  min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 2rem 1.25rem;
